@@ -182,7 +182,7 @@ ul.bootstrap-datetimepicker-widget
 
 .bootstrap-datetimepicker-widget td span:hover,.bootstrap-datetimepicker-widget thead tr:first-child th:hover
 {
-  background:#eee;
+  background: transparent;
 }
 
 .bootstrap-datetimepicker-widget .accordion-toggle {

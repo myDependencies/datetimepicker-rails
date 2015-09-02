@@ -73,12 +73,12 @@
       }
       if (this.pickTime) {
         if (icon && icon.length) this.timeIcon = icon.data('time-icon');
-        if (!this.timeIcon) this.timeIcon = 'glyphicon glyphicon-time';
+        if (!this.timeIcon) this.timeIcon = 'glyphicons clock';
         icon.addClass(this.timeIcon);
       }
       if (this.pickDate) {
         if (icon && icon.length) this.dateIcon = icon.data('date-icon');
-        if (!this.dateIcon) this.dateIcon = 'glyphicon glyphicon-calendar';
+        if (!this.dateIcon) this.dateIcon = 'glyphicons calendar';
         icon.removeClass(this.timeIcon);
         icon.addClass(this.dateIcon);
       }
@@ -276,16 +276,16 @@
       offset.top = offset.top + this.height;
 
       var $window = $(window);
-      
+
       if ( this.options.width != undefined ) {
         this.widget.width( this.options.width );
       }
-      
+
       if ( this.options.orientation == 'left' ) {
         this.widget.addClass( 'left-oriented' );
         offset.left   = offset.left - this.widget.width() + 20;
       }
-      
+
       if (this._isInFixed()) {
         position = 'fixed';
         offset.top -= $window.scrollTop();
@@ -1261,12 +1261,12 @@
         (is12Hours ? ' data-hour-format="12"' : '') +
         '>' +
         '<tr>' +
-          '<td><a href="#" class="btn btn-default" data-action="incrementHours"><span class="glyphicon glyphicon-chevron-up"></span></a></td>' +
+          '<td><a href="#" class="btn btn-default" data-action="incrementHours"><span class="glyphicons up_arrow"></span></a></td>' +
           '<td class="separator"></td>' +
-          '<td><a href="#" class="btn btn-default" data-action="incrementMinutes"><span class="glyphicon glyphicon-chevron-up"></span></a></td>' +
+          '<td><a href="#" class="btn btn-default" data-action="incrementMinutes"><span class="glyphicons up_arrow"></span></a></td>' +
           (showSeconds ?
           '<td class="separator"></td>' +
-          '<td><a href="#" class="btn btn-default" data-action="incrementSeconds"><span class="glyphicon glyphicon-chevron-up"></span></a></td>': '')+
+          '<td><a href="#" class="btn btn-default" data-action="incrementSeconds"><span class="glyphicons up_arrow"></span></a></td>': '')+
           (is12Hours ? '<td class="separator"></td>' : '') +
         '</tr>' +
         '<tr>' +
@@ -1283,12 +1283,12 @@
           '</td>' : '') +
         '</tr>' +
         '<tr>' +
-          '<td><a href="#" class="btn btn-default" data-action="decrementHours"><span class="glyphicon glyphicon-chevron-down"></span></a></td>' +
+          '<td><a href="#" class="btn btn-default" data-action="decrementHours"><span class="glyphicons down_arrow"></span></a></td>' +
           '<td class="separator"></td>' +
-          '<td><a href="#" class="btn btn-default" data-action="decrementMinutes"><span class="glyphicon glyphicon-chevron-down"></span></a></td>' +
+          '<td><a href="#" class="btn btn-default" data-action="decrementMinutes"><span class="glyphicons down_arrow"></span></a></td>' +
           (showSeconds ?
           '<td class="separator"></td>' +
-          '<td><a href="#" class="btn btn-default" data-action="decrementSeconds"><span class="glyphicon glyphicon-chevron-down"></span></a></td>': '') +
+          '<td><a href="#" class="btn btn-default" data-action="decrementSeconds"><span class="glyphicons down_arrow"></span></a></td>': '') +
           (is12Hours ? '<td class="separator"></td>' : '') +
         '</tr>' +
       '</table>' +
