@@ -847,7 +847,7 @@
     },
 
     formatDate: function(d) {
-      return this.format.replace(formatReplacer, function(match) {
+      return this.format.replace(formatReplacer, (match) => {
         var methodName, property, rv, len = match.length;
         if (match === 'ms')
           len = 1;
@@ -859,6 +859,10 @@
         } else if (property === 'Period12') {
           if (d.getUTCHours() >= 12) return 'PM';
           else return 'AM';
+        } else if (property === 'MonthName') {
+          const month = d.getUTCMonth(),
+                monthName = dates[this.language].months[month];
+          return monthName;
         } else {
           methodName = 'get' + property;
           rv = d[methodName]();
@@ -1128,6 +1132,7 @@
   var dateFormatComponents = {
     dd: {property: 'UTCDate', getPattern: function() { return '(0?[1-9]|[1-2][0-9]|3[0-1])\\b';}},
     MM: {property: 'UTCMonth', getPattern: function() {return '(0?[1-9]|1[0-2])\\b';}},
+    MMM: {property: 'MonthName', getPattern: function() {return '(0?[1-9]|1[0-2])\\b';}},
     yy: {property: 'UTCYear', getPattern: function() {return '(\\d{2})\\b'}},
     yyyy: {property: 'UTCFullYear', getPattern: function() {return '(\\d{4})\\b';}},
     hh: {property: 'UTCHours', getPattern: function() {return '(0?[0-9]|1[0-9]|2[0-3])\\b';}},
