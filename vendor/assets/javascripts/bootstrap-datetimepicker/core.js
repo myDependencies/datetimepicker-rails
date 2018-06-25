@@ -847,7 +847,9 @@
     },
 
     formatDate: function(d) {
-      return this.format.replace(formatReplacer, (match) => {
+      var context = this;
+
+      return this.format.replace(formatReplacer, function(match) {
         var methodName, property, rv, len = match.length;
         if (match === 'ms')
           len = 1;
@@ -860,8 +862,8 @@
           if (d.getUTCHours() >= 12) return 'PM';
           else return 'AM';
         } else if (property === 'MonthName') {
-          const month = d.getUTCMonth(),
-                monthName = dates[this.language].months[month];
+          var month = d.getUTCMonth(),
+              monthName = dates[context.language].months[month];
           return monthName;
         } else {
           methodName = 'get' + property;
